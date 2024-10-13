@@ -1,9 +1,12 @@
 function highestPaid(emp){
-    var heighestPaid
+    let heighestPaid = emp[0]
 
-    heighestPaid = emp.reduce((prev, curr)=> {
-        return (prev.salary > curr.salary) ? prev : curr;
-    })
+    for(const employee of emp){
+        const { salary } = employee
+        if(salary > heighestPaid.salary){
+            heighestPaid = employee
+        }
+    }
 
     return heighestPaid
 }
@@ -34,7 +37,7 @@ const employees = [
   { name: "Alex Johnson", age: 35, department: "IT", salary: 70000 },
 ];
 
-//console.log(highestPaid(employees)); // Output: { name: 'Alex Johnson', age: 35, department: 'IT', salary: 70000 }
+console.log(highestPaid(employees)); // Output: { name: 'Alex Johnson', age: 35, department: 'IT', salary: 70000 }
 
 
-console.log(destructuringToSwap(employees));
+// console.log(destructuringToSwap(employees));
